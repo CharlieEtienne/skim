@@ -6,6 +6,8 @@ use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
 use Ijpatricio\Skim\Filament\Pages\Dashboard;
+use Ijpatricio\Skim\Filament\Resources\SkimPageResource;
+use Ijpatricio\Skim\Models\SkimPage;
 
 class SkimPanelProvider extends PanelProvider
 {
@@ -19,7 +21,7 @@ class SkimPanelProvider extends PanelProvider
                 'primary' => Color::Teal,
             ])
             ->resources([
-                // ...
+                SkimPageResource::class,
             ])
             ->pages([
                 Dashboard::class,

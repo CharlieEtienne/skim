@@ -4,15 +4,17 @@ namespace Ijpatricio\Skim\Filament\Resources;
 
 use App\Filament\Resources\PageResource\Pages;
 use App\Filament\Resources\PageResource\RelationManagers;
-use App\Models\Page;
+use Awcodes\Mason\Mason;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Ijpatricio\Skim\Models\SkimPage;
 
-class PageResource extends Resource
+class SkimPageResource extends Resource
 {
-    protected static ?string $model = Page::class;
+    protected static ?string $model = SkimPage::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -20,7 +22,11 @@ class PageResource extends Resource
     {
         return $form
             ->schema([
-                //
+                TextInput::make('name'),
+                TextInput::make('slug'),
+                Mason::make('content')
+                    ->label('Content')
+                    ->columnSpanFull(),
             ]);
     }
 
