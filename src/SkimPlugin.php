@@ -1,15 +1,15 @@
 <?php
 
-namespace VendorName\Skeleton;
+namespace Ijpatricio\Skim;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
 
-class SkeletonPlugin implements Plugin
+class SkimPlugin implements Plugin
 {
     public function getId(): string
     {
-        return 'skeleton';
+        return 'skim';
     }
 
     public function register(Panel $panel): void

@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Ijpatricio\Skim\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class SkimCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'skim';
 
     public $description = 'My command';
 
