@@ -58,7 +58,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Ijpatricio\\Skim\\SkimServiceProvider"
+                "Ijpatricio\\Skim\\SkimServiceProvider",
+                "Ijpatricio\\Skim\\SkimPanelProvider"
             ],
             "aliases": {
                 "Skim": "Ijpatricio\\Skim\\Facades\\Skim"
