@@ -35,6 +35,7 @@
     "autoload": {
         "psr-4": {
             "Ijpatricio\\Skim\\": "src/",
+            "Ijpatricio\\SkimPorto\\": "libraries/porto/src/",
             "Ijpatricio\\Skim\\Database\\Factories\\": "database/factories/"
         }
     },
