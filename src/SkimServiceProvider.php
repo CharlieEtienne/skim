@@ -159,7 +159,7 @@ class SkimServiceProvider extends PackageServiceProvider
     protected function getMigrations(): array
     {
         return [
-            'create_skim_table',
+            'create_skim_pages_table',
         ];
     }
 }
