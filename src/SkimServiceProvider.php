@@ -37,7 +37,8 @@ class SkimServiceProvider extends PackageServiceProvider
                     ->publishMigrations()
                     ->askToRunMigrations()
                     ->askToStarRepoOnGitHub('ijpatricio/skim');
-            });
+            })
+            ->hasRoutes('web');
 
         $configFileName = $package->shortName();
 
@@ -87,6 +88,18 @@ class SkimServiceProvider extends PackageServiceProvider
 
         // Testing
         Testable::mixin(new TestsSkim);
+
+        $this->bootPortoTemplate();
+    }
+
+    protected function bootPortoTemplate(): void
+    {
+        // Temporary Views for first Library
+        $this->loadViewsFrom(__DIR__ . '/../libraries/porto/views', 'skim-porto');
+
+        $this->publishes([
+            __DIR__ . '/../libraries/porto/assets' => public_path('skim-libs/porto'),
+        ], 'skim-porto-assets');
     }
 
     protected function getAssetPackageName(): ?string
