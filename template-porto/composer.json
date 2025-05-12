@@ -1,0 +1,37 @@
+{
+    "name": "ijpatricio/skim-template-porto",
+    "description": "Porto template for Skim",
+    "keywords": [
+        "ijpatricio",
+        "laravel",
+        "skim"
+    ],
+    "homepage": "https://github.com/ijpatricio/skim-template-porto",
+    "support": {
+        "issues": "https://github.com/ijpatricio/skim-template-porto/issues",
+        "source": "https://github.com/ijpatricio/skim-template-porto"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Joao Patricio",
+            "email": "ijpatricio@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Ijpatricio\\SkimTemplatePorto\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ijpatricio\\SkimTemplatePorto\\ServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

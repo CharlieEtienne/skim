@@ -4,7 +4,8 @@ namespace Ijpatricio\Skim\Filament\Resources;
 
 use App\Filament\Resources\PageResource\Pages;
 use App\Filament\Resources\PageResource\RelationManagers;
-use Awcodes\Mason\Mason;
+use Filament\Forms\Components\Builder;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -24,9 +25,33 @@ class SkimPageResource extends Resource
             ->schema([
                 TextInput::make('name'),
                 TextInput::make('slug'),
-                Mason::make('content')
-                    ->label('Content')
-                    ->columnSpanFull(),
+                Select::make('library')
+                    ->options([
+                        'porto' => 'Porto',
+                        'porto-2' => 'Porto 2',
+                    ])
+                    ->default('porto')
+                    ->required(),
+                Builder::make('content')
+                    ->columnSpanFull()
+                    ->blockPickerColumns()
+                    ->blockPreviews()
+                    ->blocks([
+                        Builder\Block::make('hero1')
+                            ->label('Hero A')
+                            ->preview('skim-porto::mason.hero1')
+                            ->schema([
+                                TextInput::make('title')
+                                    ->label('Title'),
+                            ]),
+                        Builder\Block::make('hero2')
+                            ->label('Hero B')
+                            ->preview('skim-porto::mason.hero1')
+                            ->schema([
+                                TextInput::make('title')
+                                    ->label('Title'),
+                            ]),
+                    ])
             ]);
     }
 
@@ -34,7 +59,8 @@ class SkimPageResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('name'),
+                Tables\Columns\TextColumn::make('slug'),
             ])
             ->filters([
                 //
@@ -43,9 +69,7 @@ class SkimPageResource extends Resource
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
+                //
             ]);
     }
 

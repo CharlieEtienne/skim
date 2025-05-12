@@ -59,7 +59,12 @@ class SkimServiceProvider extends PackageServiceProvider
         }
     }
 
-    public function packageRegistered(): void {}
+    public function packageRegistered(): void
+    {
+        $this->app->singleton(Skim::class, function () {
+            return new Skim();
+        });
+    }
 
     public function packageBooted(): void
     {
@@ -88,18 +93,6 @@ class SkimServiceProvider extends PackageServiceProvider
 
         // Testing
         Testable::mixin(new TestsSkim);
-
-        $this->bootPortoTemplate();
-    }
-
-    protected function bootPortoTemplate(): void
-    {
-        // Temporary Views for first Library
-        $this->loadViewsFrom(__DIR__ . '/../libraries/porto/views', 'skim-porto');
-
-        $this->publishes([
-            __DIR__ . '/../libraries/porto/assets' => public_path('skim-libs/porto'),
-        ], 'skim-porto-assets');
     }
 
     protected function getAssetPackageName(): ?string
@@ -159,6 +152,7 @@ class SkimServiceProvider extends PackageServiceProvider
     protected function getMigrations(): array
     {
         return [
+            'create_skim_websites_table',
             'create_skim_pages_table',
         ];
     }

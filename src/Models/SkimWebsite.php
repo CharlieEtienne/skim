@@ -4,11 +4,7 @@ namespace Ijpatricio\Skim\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class SkimPage extends Model
+class SkimWebsite extends Model
 {
     protected $guarded = ['id'];
-
-    protected $casts = [
-        'content' => 'json',
-    ];
 }

@@ -21,7 +21,6 @@
     ],
     "require": {
         "php": "^8.2",
-        "awcodes/mason": "^0.1.4",
         "filament/filament": "^3.0",
         "spatie/laravel-package-tools": "^1.15.0"
     },
@@ -36,7 +35,7 @@
     "autoload": {
         "psr-4": {
             "Ijpatricio\\Skim\\": "src/",
-            "Ijpatricio\\SkimPorto\\": "libraries/porto/src/",
+            "Ijpatricio\\SkimPorto\\": "template-porto/src/",
             "Ijpatricio\\Skim\\Database\\Factories\\": "database/factories/"
         }
     },
@@ -62,10 +61,7 @@
             "providers": [
                 "Ijpatricio\\Skim\\SkimServiceProvider",
                 "Ijpatricio\\Skim\\SkimPanelProvider"
-            ],
-            "aliases": {
-                "Skim": "Ijpatricio\\Skim\\Facades\\Skim"
-            }
+            ]
         }
     },
     "minimum-stability": "dev",
