@@ -36,7 +36,7 @@ class ServiceProvider extends PackageServiceProvider
         );
 
         // Temporary Views for first Library
-        $this->loadViewsFrom(__DIR__ . '/../views', 'skim-porto');
+        $this->loadViewsFrom(__DIR__ . '/../views', 'skim-template-porto');
 
         $this->publishes([
             __DIR__ . '/../assets' => public_path('skim-templates/porto'),

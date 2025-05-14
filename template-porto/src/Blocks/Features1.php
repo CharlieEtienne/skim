@@ -6,16 +6,16 @@ use Filament\Forms\Components\Builder\Block;
 use Filament\Forms\Components\TextInput;
 use Ijpatricio\Skim\Contracts\HasBlock;
 
-class Hero1 implements HasBlock
+class Features1 implements HasBlock
 {
     public static function getBlock(): Block
     {
-        return Block::make('hero1')
-            ->label('Hero A')
-            ->preview('skim-template-porto::blocks.hero1')
+        return Block::make('features1')
+           ->label('Features 1')
+            ->preview('skim-template-porto::blocks.features1')
             ->schema([
-                TextInput::make('title')
-                    ->label('Title'),
+                TextInput::make('title'),
+                TextInput::make('description'),
             ]);
     }
 }

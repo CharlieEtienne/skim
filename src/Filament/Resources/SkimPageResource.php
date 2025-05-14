@@ -10,7 +10,9 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Ijpatricio\Skim\Actions\GetTemplateBlocks;
 use Ijpatricio\Skim\Models\SkimPage;
+use Ijpatricio\Skim\Models\SkimWebsite;
 
 class SkimPageResource extends Resource
 {
@@ -25,30 +27,25 @@ class SkimPageResource extends Resource
     public static function form(Form $form): Form
     {
         return $form
-            ->schema([
-                TextInput::make('name'),
-                TextInput::make('slug'),
-                Builder::make('content')
-                    ->columnSpanFull()
-                    ->blockPickerColumns()
-                    ->blockPreviews()
-                    ->blocks([
-                        Builder\Block::make('hero1')
-                            ->label('Hero A')
-                            ->preview('skim-porto::mason.hero1')
-                            ->schema([
-                                TextInput::make('title')
-                                    ->label('Title'),
-                            ]),
-                        Builder\Block::make('hero2')
-                            ->label('Hero B')
-                            ->preview('skim-porto::mason.hero1')
-                            ->schema([
-                                TextInput::make('title')
-                                    ->label('Title'),
-                            ]),
-                    ])
-            ]);
+            ->schema(function ($livewire) {
+
+                /** @var SkimWebsite $record */
+                $website = $livewire->parentRecord;
+
+                $getTemplateBlocks = app(GetTemplateBlocks::class);
+
+                $blocksArray = $getTemplateBlocks($website->template)->toArray();
+
+                return [
+                    TextInput::make('name'),
+                    TextInput::make('slug'),
+                    Builder::make('content')
+                        ->columnSpanFull()
+                        ->blockPickerColumns()
+                        ->blockPreviews()
+                        ->blocks($blocksArray)
+                ];
+            });
     }
 
     public static function table(Table $table): Table

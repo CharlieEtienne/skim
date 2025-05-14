@@ -18,6 +18,11 @@ class Skim {
         $this->templates->put($templateName, $templateDir);
     }
 
+    public function getTemplates(): Collection
+    {
+        return $this->templates;
+    }
+
     public function getTemplatesForSelectField(): Collection
     {
         return $this->templates->mapWithKeys(fn ($path, $key) => [$key => $key]);
