@@ -5,7 +5,9 @@ namespace Ijpatricio\Skim\Filament\Resources;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Ijpatricio\Skim\Facades\Skim;
-use Ijpatricio\Skim\Filament\Resources\SkimWebsiteResource\Pages;
+use Ijpatricio\Skim\Filament\Resources\PageResource\Pages\CreatePage;
+use Ijpatricio\Skim\Filament\Resources\PageResource\Pages\EditPage;
+use Ijpatricio\Skim\Filament\Resources\PageResource\Pages\ListPages;
 use Ijpatricio\Skim\Filament\Resources\SkimWebsiteResource\RelationManagers;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -41,6 +43,10 @@ class SkimWebsiteResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\Action::make('manage-pages')
+                    ->url(fn($record) => SkimWebsiteResource::getUrl('page.index', [
+                        'parent' => $record,
+                    ]))
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -62,6 +68,11 @@ class SkimWebsiteResource extends Resource
             'index' => SkimWebsiteResource\Pages\ListSkimWebsites::route('/'),
             'create' => SkimWebsiteResource\Pages\CreateSkimWebsite::route('/create'),
             'edit' => SkimWebsiteResource\Pages\EditSkimWebsite::route('/{record}/edit'),
+
+            // Nested resource: SkimPageResource
+            'page.index' => ListPages::route('/{parent}/pages'),
+            'page.create' => CreatePage::route('{parent}/pages/create'),
+            'page.edit' => EditPage::route('{parent}/pages/{record}/edit'),
         ];
     }
 }

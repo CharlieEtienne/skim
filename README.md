@@ -71,6 +71,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 ## Credits
 
 - [Joao Patricio](https://github.com/ijpatricio)
+- [Saade](https://github.com/saade/filament-extra) Ported Parent Resource
 - [All Contributors](../../contributors)
 
 ## License

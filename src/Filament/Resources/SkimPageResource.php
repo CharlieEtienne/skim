@@ -5,7 +5,6 @@ namespace Ijpatricio\Skim\Filament\Resources;
 use App\Filament\Resources\PageResource\Pages;
 use App\Filament\Resources\PageResource\RelationManagers;
 use Filament\Forms\Components\Builder;
-use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -17,7 +16,11 @@ class SkimPageResource extends Resource
 {
     protected static ?string $model = SkimPage::class;
 
+    public static ?string $parentResource = SkimWebsiteResource::class;
+
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
+    protected static bool $shouldRegisterNavigation = false;
 
     public static function form(Form $form): Form
     {
@@ -25,13 +28,6 @@ class SkimPageResource extends Resource
             ->schema([
                 TextInput::make('name'),
                 TextInput::make('slug'),
-                Select::make('library')
-                    ->options([
-                        'porto' => 'Porto',
-                        'porto-2' => 'Porto 2',
-                    ])
-                    ->default('porto')
-                    ->required(),
                 Builder::make('content')
                     ->columnSpanFull()
                     ->blockPickerColumns()
@@ -66,7 +62,11 @@ class SkimPageResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make()
+                    ->url(fn ($record) => SkimWebsiteResource::getUrl('page.edit', [
+                        'parent' => $record->skim_website_id,
+                        'record' => $record,
+                    ])),
             ])
             ->bulkActions([
                 //
@@ -83,9 +83,10 @@ class SkimPageResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => \Ijpatricio\Skim\Filament\Resources\PageResource\Pages\ListPages::route('/'),
-            'create' => \Ijpatricio\Skim\Filament\Resources\PageResource\Pages\CreatePage::route('/create'),
-            'edit' => \Ijpatricio\Skim\Filament\Resources\PageResource\Pages\EditPage::route('/{record}/edit'),
+            // We're using the parent resource to manage the routing of the Pages resource
+//            'index' => \Ijpatricio\Skim\Filament\Resources\PageResource\Pages\ListPages::route('/'),
+//            'create' => \Ijpatricio\Skim\Filament\Resources\PageResource\Pages\CreatePage::route('/create'),
+//            'edit' => \Ijpatricio\Skim\Filament\Resources\PageResource\Pages\EditPage::route('/{record}/edit'),
         ];
     }
 }

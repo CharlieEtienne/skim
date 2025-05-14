@@ -31,6 +31,7 @@ class SkimPanelProvider extends PanelProvider
             ])
             ->resources([
                 SkimWebsiteResource::class,
+                SkimPageResource::class,
             ])
             ->pages([
                 Dashboard::class,
