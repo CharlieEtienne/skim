@@ -13,7 +13,7 @@ class SkimPage extends Model
         'content' => 'json',
     ];
 
-    public function website(): BelongsTo
+    public function skimWebsite(): BelongsTo
     {
         return $this->belongsTo(SkimWebsite::class);
     }

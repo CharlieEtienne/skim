@@ -2,21 +2,26 @@
 
 namespace Ijpatricio\Skim\Http\Controllers;
 
+use Ijpatricio\Skim\Actions\RenderPage;
 use Ijpatricio\Skim\Models\SkimPage;
 use Illuminate\Http\Request;
 
 class SkimPageController
 {
-    public function __invoke(Request $request)
+    public function __invoke(Request $request, RenderPage $renderPage)
     {
         $page = SkimPage::query()
-            ->where('slug', $request->getRequestUri())
-            ->first();
+            ->get()
+            ->first(function (SkimPage $page) use ($request) {
+                $currentPageRoute = \Route::get($page->route);
 
-        if (blank($page)) {
-            return abort(404);
+                return $currentPageRoute->matches($request);
+            });
+
+        if (filled($page)) {
+            return $renderPage($page);
         }
 
-        return 'Hello World';
+        return abort(404);
     }
 }

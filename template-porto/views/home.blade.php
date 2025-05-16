@@ -1,23 +1,23 @@
-@extends('skim-porto::layouts.app')
+@extends('skim-template-porto::layouts.app')
 
 @section('content')
 
-    @include('skim-porto::blocks.hero_1')
+    @include('skim-template-porto::blocks.hero1')
 
-    @include('skim-porto::blocks.features_1')
+    @include('skim-template-porto::blocks.features1')
 
-    @include('skim-porto::blocks.showcase_1')
+    @include('skim-template-porto::blocks.showcase1')
 
-    @include('skim-porto::blocks.features_2')
+    @include('skim-template-porto::blocks.features2')
 
-    @include('skim-porto::blocks.showcase_2')
+    @include('skim-template-porto::blocks.showcase2')
 
-    @include('skim-porto::blocks.logo_cloud_1')
+    @include('skim-template-porto::blocks.logocloud1')
 
-    @include('skim-porto::blocks.testimonial_1')
+    @include('skim-template-porto::blocks.testimonial1')
 
-    @include('skim-porto::blocks.testimonial_2')
+    @include('skim-template-porto::blocks.testimonial2')
 
-    @include('skim-porto::blocks.footer_1')
+    @include('skim-template-porto::blocks.footer1')
 
 @endsection

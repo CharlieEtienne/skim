@@ -39,10 +39,11 @@ class SkimPageResource extends Resource
                 return [
                     TextInput::make('name'),
                     TextInput::make('slug'),
+                    TextInput::make('route'),
                     Builder::make('content')
                         ->columnSpanFull()
                         ->blockPickerColumns()
-                        ->blockPreviews()
+//                        ->blockPreviews()
                         ->blocks($blocksArray)
                 ];
             });
