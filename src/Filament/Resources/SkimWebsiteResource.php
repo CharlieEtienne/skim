@@ -8,6 +8,7 @@ use Ijpatricio\Skim\Facades\Skim;
 use Ijpatricio\Skim\Filament\Resources\SkimPageResource\Pages\CreatePage;
 use Ijpatricio\Skim\Filament\Resources\SkimPageResource\Pages\EditPage;
 use Ijpatricio\Skim\Filament\Resources\SkimPageResource\Pages\ListPages;
+use Ijpatricio\Skim\Filament\Resources\SkimWebsiteResource\Pages\ViewWebsite;
 use Ijpatricio\Skim\Filament\Resources\SkimWebsiteResource\RelationManagers;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -48,6 +49,9 @@ class SkimWebsiteResource extends Resource
                         'parent' => $record,
                     ]))
             ])
+            ->recordUrl(
+                fn ($record) => SkimWebsiteResource::getUrl('view', ['record' => $record])
+            )
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
@@ -67,6 +71,7 @@ class SkimWebsiteResource extends Resource
         return [
             'index' => SkimWebsiteResource\Pages\ListSkimWebsites::route('/'),
             'create' => SkimWebsiteResource\Pages\CreateSkimWebsite::route('/create'),
+            'view' => SkimWebsiteResource\Pages\ViewWebsite::route('/{record}'),
             'edit' => SkimWebsiteResource\Pages\EditSkimWebsite::route('/{record}/edit'),
 
             // Nested resource: SkimPageResource
