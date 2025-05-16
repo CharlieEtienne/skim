@@ -4,14 +4,14 @@
     <div class="container max-w-screen-xl mx-auto px-4">
 
         <nav class="flex items-center justify-between mb-40">
-            <img src="/skim-libs/porto/image/navbar-logo.png" alt="Logo">
+            <img src="/skim-templates/porto/image/navbar-logo.png" alt="Logo">
 
             <button class="px-7 py-3 md:px-9 md:py-4 bg-white font-medium md:font-semibold text-gray-700 text-md rounded-md hover:bg-gray-700 hover:text-white transition ease-linear duration-500">Get my CV</button>
         </nav>
 
         <div class="text-center">
             <div class="flex justify-center mb-16">
-                <img src="/skim-libs/porto/image/home-img.png" alt="Image">
+                <img src="/skim-templates/porto/image/home-img.png" alt="Image">
             </div>
 
             <h6 class="font-medium text-gray-600 text-lg md:text-2xl uppercase mb-8">Kate Wolff</h6>
