@@ -42,6 +42,7 @@ class SkimPageResource extends Resource
                     TextInput::make('route'),
                     Builder::make('content')
                         ->columnSpanFull()
+                        ->collapsible()
                         ->blockPickerColumns()
 //                        ->blockPreviews()
                         ->blocks($blocksArray)

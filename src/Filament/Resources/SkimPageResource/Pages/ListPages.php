@@ -1,6 +1,6 @@
 <?php
 
-namespace Ijpatricio\Skim\Filament\Resources\PageResource\Pages;
+namespace Ijpatricio\Skim\Filament\Resources\SkimPageResource\Pages;
 
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
