@@ -18,8 +18,6 @@ class SkimPageController
                 return $currentPageRoute->matches($request);
             });
 
-        ray($page->content);
-
         if (filled($page)) {
             return $renderPage($page);
         }
