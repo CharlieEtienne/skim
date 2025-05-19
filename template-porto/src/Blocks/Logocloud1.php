@@ -6,13 +6,16 @@ use Filament\Forms\Components\Builder\Block;
 use Filament\Forms\Components\TextInput;
 use Ijpatricio\Skim\Contracts\HasBlock;
 
-class Features1 implements HasBlock
+class Logocloud1 implements HasBlock
 {
     public static function getBlock(): Block
     {
-        return Block::make('features1')
-           ->label('Features 1')
+        return Block::make('logocloud1')
+            ->label('Logo Cloud 1')
             ->preview('skim::filament.forms.block-preview')
+            ->viewData([
+                'block_name' => 'Logo Cloud 1',
+            ])
             ->schema([
                 //
             ]);
