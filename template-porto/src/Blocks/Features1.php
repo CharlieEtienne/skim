@@ -12,7 +12,7 @@ class Features1 implements HasBlock
     {
         return Block::make('features1')
            ->label('Features 1')
-            ->preview('skim-template-porto::blocks.features1')
+            ->preview('skim::filament.forms.block-preview')
             ->schema([
                 TextInput::make('title'),
                 TextInput::make('description'),

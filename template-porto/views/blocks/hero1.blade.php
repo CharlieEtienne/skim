@@ -10,11 +10,13 @@
                 style="max-width: 320px; max-height: 80px;"
             >
 
-            <button
-                class="px-7 py-3 md:px-9 md:py-4 bg-white font-medium md:font-semibold text-gray-700 text-md rounded-md hover:bg-gray-700 hover:text-white transition ease-linear duration-500"
-            >
-                {{ $top_button_text ?? 'Get get my CV' }}
-            </button>
+            @if($top_button_text)
+                <button
+                    class="px-7 py-3 md:px-9 md:py-4 bg-white font-medium md:font-semibold text-gray-700 text-md rounded-md hover:bg-gray-700 hover:text-white transition ease-linear duration-500"
+                >
+                    {{ $top_button_text ?? 'Get get my CV' }}
+                </button>
+            @endif
         </nav>
 
         <div class="text-center">

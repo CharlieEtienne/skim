@@ -5,6 +5,7 @@ namespace Ijpatricio\Skim\Filament\Resources;
 use App\Filament\Resources\PageResource\Pages;
 use App\Filament\Resources\PageResource\RelationManagers;
 use Filament\Forms\Components\Builder;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -40,12 +41,18 @@ class SkimPageResource extends Resource
                     TextInput::make('name'),
                     TextInput::make('slug'),
                     TextInput::make('route'),
-                    Builder::make('content')
-                        ->columnSpanFull()
-                        ->collapsible()
-                        ->blockPickerColumns()
-//                        ->blockPreviews()
-                        ->blocks($blocksArray)
+                    Section::make('Content')
+                        ->description('Drag and drop the blocks to reorder them.')
+                        ->schema([
+                            Builder::make('content')
+                                ->hiddenLabel()
+                                ->blockPickerColumns()
+                                ->blockPreviews()
+                                ->blockNumbers(false)
+                                ->blocks($blocksArray)
+                        ])
+                        ->columns(1)
+                        ->columnSpanFull(),
                 ];
             });
     }

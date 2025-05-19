@@ -12,8 +12,11 @@ class Hero1 implements HasBlock
     public static function getBlock(): Block
     {
         return Block::make('hero1')
-            ->label('Hero A')
-            ->preview('skim-template-porto::blocks.hero1')
+            ->label('Hero 1')
+            ->preview('skim::filament.forms.block-preview')
+            ->viewData([
+                'block_name' => 'Hero 1',
+            ])
             ->schema([
                 FileUpload::make('logo'),
                 TextInput::make('top_button_text'),
