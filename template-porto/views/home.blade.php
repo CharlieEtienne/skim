@@ -12,10 +12,6 @@
 
     @include('skim-template-porto::blocks.showcase2')
 
-    @include('skim-template-porto::blocks.logocloud1')
-
-    @include('skim-template-porto::blocks.testimonial1')
-
     @include('skim-template-porto::blocks.testimonial2')
 
     @include('skim-template-porto::blocks.footer1')
