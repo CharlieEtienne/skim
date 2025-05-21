@@ -3,9 +3,13 @@
 
     <div class="container max-w-screen-xl mx-auto px-4">
 
-        <h1 class="font-medium text-gray-700 text-3xl md:text-4xl mb-5">{{ $section_title ?? 'Education' }}</h1>
+        <h1 class="font-medium text-gray-700 text-3xl md:text-4xl mb-5">
+            {{ $title ?? 'Education' }}
+        </h1>
 
-        <p class="font-normal text-gray-500 text-xs md:text-base mb-20">{{ $section_subtitle ?? 'Below is a summary of the places I studied' }}</p>
+        <p class="font-normal text-gray-500 text-xs md:text-base mb-20">
+            {{ $subtitle ?? 'Below is a summary of the places I studied' }}
+        </p>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             @foreach($features ?? [] as $feature)

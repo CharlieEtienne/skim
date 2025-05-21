@@ -17,12 +17,8 @@ class Showcase2 implements HasBlock
                 'block_name' => 'Showcase 2',
             ])
             ->schema([
-                TextInput::make('main_heading')
-                    ->label('Main Heading')
-                    ->default('Please do not measure your skills in percentages!'),
-                TextInput::make('description')
-                    ->label('Description')
-                    ->default('In my many years of experience, I use @laravel for backend projects and @vuejs for front-end projects. I\'m an avid programmer, so I create designs based on the weekend @figmadesign.'),
+                TextInput::make('main_heading'),
+                TextInput::make('description'),
             ]);
     }
 }
