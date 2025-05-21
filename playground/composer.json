@@ -22,11 +22,19 @@
             "options": {
                 "symlink": true
             }
+        },
+        {
+            "type": "path",
+            "url": "../template-frequencii",
+            "options": {
+                "symlink": true
+            }
         }
     ],
     "require": {
         "php": "^8.2",
-        "ijpatricio/skim": "dev-main",
+        "ijpatricio/skim": "*",
+        "ijpatricio/skim-template-frequencii": "*",
         "ijpatricio/skim-template-porto": "*",
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1",

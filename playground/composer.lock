@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "25a8be2f10445e79224bad33d8c351c2",
+    "content-hash": "d4a53dc259ce2a493d7378d3769a0be3",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -1967,7 +1967,7 @@
             "dist": {
                 "type": "path",
                 "url": "..",
-                "reference": "da80ca0887bde07feae3c6e234a304485bb5e561"
+                "reference": "f399850b9a9d423d22be959f0f4c725364e69250"
             },
             "require": {
                 "filament/filament": "^3.0",
@@ -2034,6 +2034,53 @@
             "support": {
                 "issues": "https://github.com/ijpatricio/skim/issues",
                 "source": "https://github.com/ijpatricio/skim"
+            },
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "ijpatricio/skim-template-frequencii",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "../template-frequencii",
+                "reference": "915998a0a125fd053672d423a4477fea81b3f616"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Ijpatricio\\SkimTemplateFrequencii\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ijpatricio\\SkimTemplateFrequencii\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Joao Patricio",
+                    "email": "ijpatricio@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Frequencii template for Skim",
+            "homepage": "https://github.com/ijpatricio/skim-template-frequencii",
+            "keywords": [
+                "ijpatricio",
+                "laravel",
+                "skim"
+            ],
+            "support": {
+                "issues": "https://github.com/ijpatricio/skim-template-frequencii/issues",
+                "source": "https://github.com/ijpatricio/skim-template-frequencii"
             },
             "transport-options": {
                 "symlink": true,
@@ -11534,9 +11581,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "ijpatricio/skim": 20
-    },
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
