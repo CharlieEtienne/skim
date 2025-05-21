@@ -1,6 +1,4 @@
-<!-- Logo Cloud 1 -->
 <section class="py-10 md:py-16">
-
     <div class="container max-w-screen-xl mx-auto px-4">
 
         <h1 class="font-medium text-gray-700 text-3xl md:text-4xl mb-5">{{ $section_title ?? 'Experience' }}</h1>
@@ -50,7 +48,5 @@
                 <p class="font-normal text-gray-400 text-base">{{ $row5_year ?? '2016' }}</p>
             </div>
         </div>
-
     </div>
-
 </section>
