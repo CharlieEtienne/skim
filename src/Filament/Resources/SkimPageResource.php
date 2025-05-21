@@ -38,9 +38,9 @@ class SkimPageResource extends Resource
                 $blocksArray = $getTemplateBlocks($website->template)->toArray();
 
                 return [
-                    TextInput::make('name'),
-                    TextInput::make('slug'),
-                    TextInput::make('route'),
+                    TextInput::make('name')->required(),
+                    TextInput::make('slug')->required(),
+                    TextInput::make('route')->required(),
                     Section::make('Content')
                         ->description('Drag and drop the blocks to reorder them.')
                         ->schema([
