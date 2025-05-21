@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "25a8be2f10445e79224bad33d8c351c2",
+    "content-hash": "b8a25776bcd0045fd0e0f2cfc10f2b2c",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -1967,7 +1967,7 @@
             "dist": {
                 "type": "path",
                 "url": "..",
-                "reference": "bc217db6c706775e318346ab1251ff3b441e3345"
+                "reference": "f216f376393ebd5757988595b5acffd860e8cf9a"
             },
             "require": {
                 "filament/filament": "^3.0",
@@ -1975,11 +1975,11 @@
                 "spatie/laravel-package-tools": "^1.15.0"
             },
             "require-dev": {
-                "nunomaduro/collision": "^7.9",
-                "orchestra/testbench": "^8.0",
-                "pestphp/pest": "^2.1",
-                "pestphp/pest-plugin-arch": "^2.0",
-                "pestphp/pest-plugin-laravel": "^2.0",
+                "nunomaduro/collision": "^8.0",
+                "orchestra/testbench": "^10.0",
+                "pestphp/pest": "^v3.8.2",
+                "pestphp/pest-plugin-arch": "^3.0",
+                "pestphp/pest-plugin-laravel": "^3.0",
                 "spatie/laravel-ray": "^1.26"
             },
             "type": "library",
@@ -1988,10 +1988,7 @@
                     "providers": [
                         "Ijpatricio\\Skim\\SkimServiceProvider",
                         "Ijpatricio\\Skim\\SkimPanelProvider"
-                    ],
-                    "aliases": {
-                        "Skim": "Ijpatricio\\Skim\\Facades\\Skim"
-                    }
+                    ]
                 }
             },
             "autoload": {
@@ -2044,8 +2041,55 @@
             }
         },
         {
+            "name": "ijpatricio/skim-template-frequencii",
+            "version": "dev-pr-2",
+            "dist": {
+                "type": "path",
+                "url": "../template-frequencii",
+                "reference": "915998a0a125fd053672d423a4477fea81b3f616"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Ijpatricio\\SkimTemplateFrequencii\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ijpatricio\\SkimTemplateFrequencii\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Joao Patricio",
+                    "email": "ijpatricio@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Frequencii template for Skim",
+            "homepage": "https://github.com/ijpatricio/skim-template-frequencii",
+            "keywords": [
+                "ijpatricio",
+                "laravel",
+                "skim"
+            ],
+            "support": {
+                "issues": "https://github.com/ijpatricio/skim-template-frequencii/issues",
+                "source": "https://github.com/ijpatricio/skim-template-frequencii"
+            },
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
             "name": "ijpatricio/skim-template-porto",
-            "version": "dev-main",
+            "version": "dev-pr-2",
             "dist": {
                 "type": "path",
                 "url": "../template-porto",
@@ -11526,7 +11570,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "ijpatricio/skim": 20
+        "ijpatricio/skim": 20,
+        "ijpatricio/skim-template-frequencii": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
