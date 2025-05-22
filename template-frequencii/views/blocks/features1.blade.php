@@ -9,7 +9,8 @@
     <div class="container px-4 mx-auto">
         <div class="flex flex-wrap -mx-4">
             <div class="w-full md:w-1/2 lg:w-5/12 px-4 mb-20 lg:mb-0">
-                <div class="max-w-xs mb-10"><span class="inline-flex items-center h-6 mb-4 px-2 text-sm uppercase font-medium text-yellowGreen-700 bg-yellowGreen-200 rounded-full">Feature</span>
+                <div class="max-w-xs mb-10">
+                    <span class="inline-flex items-center h-6 mb-4 px-2 text-sm uppercase font-medium text-yellowGreen-700 bg-yellowGreen-200 rounded-full">{{ $badge ?? 'Feature' }}</span>
                     <h2 class="font-heading tracking-tight text-4xl sm:text-5xl font-bold mb-4">{{ $title ?? false }}</h2>
                     <p class="text-gray-700 mb-10">{{ $subtitle ?? false }}</p>
                     <ul>
