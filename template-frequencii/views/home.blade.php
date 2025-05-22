@@ -18,4 +18,6 @@
 
     @include('skim-template-frequencii::blocks.faq')
 
+    @include('skim-template-frequencii::blocks.prices')
+
 @endsection
