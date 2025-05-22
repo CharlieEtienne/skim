@@ -10,4 +10,6 @@
 
     @include('skim-template-frequencii::blocks.steps')
 
+    @include('skim-template-frequencii::blocks.testimonials')
+
 @endsection
