@@ -6,4 +6,6 @@
 
     @include('skim-template-frequencii::blocks.features1')
 
+    @include('skim-template-frequencii::blocks.features2')
+
 @endsection
