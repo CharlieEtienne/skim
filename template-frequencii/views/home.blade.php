@@ -14,4 +14,6 @@
 
     @include('skim-template-frequencii::blocks.stats')
 
+    @include('skim-template-frequencii::blocks.team')
+
 @endsection
