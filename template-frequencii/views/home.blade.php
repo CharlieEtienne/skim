@@ -12,4 +12,6 @@
 
     @include('skim-template-frequencii::blocks.testimonials')
 
+    @include('skim-template-frequencii::blocks.stats')
+
 @endsection
