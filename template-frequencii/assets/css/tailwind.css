@@ -2066,3 +2066,9 @@ video {
     padding-right: 2rem;
   }
 }
+.grid {
+    display: grid;
+}
+.grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}

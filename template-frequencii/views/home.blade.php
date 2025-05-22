@@ -8,4 +8,6 @@
 
     @include('skim-template-frequencii::blocks.features2')
 
+    @include('skim-template-frequencii::blocks.steps')
+
 @endsection

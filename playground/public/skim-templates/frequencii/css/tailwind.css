@@ -2066,3 +2066,20 @@ video {
     padding-right: 2rem;
   }
 }
+.grid {
+    display: grid;
+}
+@media (min-width: 768px) {
+    .md\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+@media (min-width: 768px) {
+    .md\:flex-row {
+        flex-direction: row;
+    }
+}
+.my-4 {
+    margin-top: 1rem /* 16px */;
+    margin-bottom: 1rem /* 16px */;
+}
