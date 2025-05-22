@@ -16,4 +16,6 @@
 
     @include('skim-template-frequencii::blocks.team')
 
+    @include('skim-template-frequencii::blocks.faq')
+
 @endsection
