@@ -2,11 +2,13 @@
 
 namespace Ijpatricio\SkimTemplateFrequencii\Blocks;
 
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Builder\Block;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\TextInput;
 use Ijpatricio\Skim\Contracts\HasBlock;
+use Ijpatricio\SkimPorto\Forms\IconSelectorOptions;
 
 class Features1 implements HasBlock
 {
@@ -30,8 +32,9 @@ class Features1 implements HasBlock
                     ->itemLabel(fn (array $state) => $state['title'] ?? 'Feature')
                     ->label('Features')
                     ->schema([
-                        TextInput::make('icon')
-                            ->label('Icon'),
+                        Select::make('icon')
+                            ->searchable()
+                            ->options(IconSelectorOptions::get()),
                         TextInput::make('title')
                             ->live(onBlur: true)
                             ->label('Title'),
